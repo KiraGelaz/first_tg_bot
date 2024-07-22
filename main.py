@@ -1,11 +1,12 @@
 from telebot import TeleBot, types
 from text_to_speech import text_to_speech
 import os
+from os import environ as env
 
 os.environ["SUNO_OFFLOAD_CPU"] = "True"
 os.environ["SUNO_USE_SMALL_MODELS"] = "True"
 
-TOKEN = '6831186333:AAE9l-GIpW77BH0PauqbpylnvqyHU0UORuQ'
+TOKEN = env.get('YOUR_BOT_KEY')
 bot = TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
